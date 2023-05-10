@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProjectGohan';
+  parentMessage:string='Message from the parent to child post component';
 }
