@@ -7,7 +7,7 @@ import { Component,Input } from '@angular/core';
 })
 export class PostComponent {
   title:string = "List of Posts";
-  postMessage:string='This is a message from post componenet, which is the parent of the single post component';
+  postParentMessage:string='This is a message from post componenet, which is the parent of the post-list component';
   
   @Input() fromParent!:string;
 }
