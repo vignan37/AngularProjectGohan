@@ -1,0 +1,20 @@
+<div class="form-area">
+    <h1>Post Form</h1>
+    <input type="text" placeholder="Post Tilte" [(ngModel)] = 'title'>
+    <br><br>
+    <input type="text" placeholder="Post Details" [(ngModel)] = 'details' >
+    <br><br>
+    <input type="text" placeholder="Image URL" [(ngModel)] = 'imgUrl' >
+    <br><br>
+    <input type="text" placeholder="Post URL" [(ngModel)] = 'postUrl' >
+    <br><br>
+    <input type="checkbox" [(ngModel)] = 'boolAddBackground'> Add Background
+    
+</div>
+
+<div class = "preview-area">
+    <img [src] = "imgUrl" alt="">
+    <h1> <span [class.add-background]="boolAddBackground" >{{ title }} </span> </h1>
+    <p>{{details}}</p>
+    <a [href] = "postUrl" target="_blank" [style.display]=" postUrl ? 'block' : 'none'">More Details</a>
+</div>
