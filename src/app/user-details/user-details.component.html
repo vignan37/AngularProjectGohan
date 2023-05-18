@@ -11,21 +11,26 @@
 </div>
 <br><br>
 
-<div class = "table-area">
-    <table width = '500'>
-        <thead>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Action</th>
-        </thead>
-        <tr *ngFor="let user of userArray; let index = index">
-            <td>{{index+1}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.address}}</td>
-            <td><button (click) ="onDelete(index)">Delete</button></td>
-        </tr>
-    </table>
+<div *ngIf="userArray.length>0 else noData">
+    <div class = "table-area">
+        <table width = '500'>
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+            <tr *ngFor="let user of userArray; let index = index">
+                <td>{{index+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+                <td><button (click) ="onDelete(index)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
 </div>
+<ng-template #noData>
+    <h4>NO data to show</h4>
+</ng-template>
